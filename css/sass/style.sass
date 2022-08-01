@@ -1,7 +1,272 @@
+$basic-black: #000000
+$basic-dark: #363636
+$basic-gray: #464646
+$basic-half-gray: #7e7e7e
+$basic-light-gray: #e5e5e5
+$basic-white: #FFFFFF
+
+$special-yellow: #F7E296
+$special-yellow-dark: #f0c52e
+$special-green: #91c92f
+
+$status-pink: #f6dada
+
+$transition-duration: .123s
+
+
+@mixin trans($property, $delay: 0s, $duration: $transition-duration)
+    transition-property: $property
+    transition-duration: $duration
+    transition-timing-function: ease-out
+    transition-delay: $delay
+  
+
+@font-face
+    font-family: 'Gilroy'
+    src: url('../../fonts/Gilroy-Light.woff2') format('woff2'), url('../../fonts/Gilroy-Light.woff') format('woff'), url('../../fonts/Gilroy-Light.ttf') format('truetype')
+    font-weight: 300
+    font-style: normal
+
+@font-face
+    font-family: 'Gilroy'
+    src: url('../../fonts/Gilroy-Extrabold.woff2') format('woff2'), url('../../fonts/Gilroy-Extrabold.woff') format('woff'), url('../../fonts/Gilroy-Extrabold.ttf') format('truetype')
+    font-weight: 700
+    font-style: normal
+
+@font-face 
+    font-family: 'Open Sans'
+    src: url('../../fonts/OpenSans-Regular.ttf') format('truetype')
+    font-weight: normal
+    font-style: normal
+
+@font-face 
+    font-family: 'Open Sans'
+    src: url('../../fonts/OpenSans-Light.ttf') format('truetype')
+    font-weight: 300
+    font-style: normal
+
+@font-face 
+    font-family: 'Poppins'
+    src: url('../../fonts/Poppins-Regular.ttf') format('truetype')
+    font-weight: normal
+    font-style: normal
+
+@font-face 
+    font-family: 'Roboto'
+    src: url('../../fonts/Roboto-Bold.ttf') format('truetype')
+    font-weight: bold
+    font-style: normal
+
+@font-face 
+    font-family: 'Roboto'
+    src: url('../../fonts/Roboto-Regular.ttf') format('truetype')
+    font-weight: normal
+    font-style: normal
+
+:root
+    --container-horizontal-padding: 60px
+
 *
     box-sizing: border-box
 
 body
     padding: 0
     margin: 0
-    background-color: #fff
+    background-color: $basic-white
+    color: $basic-black
+
+.container
+    margin: 0 auto
+    padding: 0 var(--container-horizontal-padding)
+    max-width: 1160px
+
+.h60-c30
+    opacity: 1
+    @include trans(opacity)
+    &:hover
+        opacity: .6
+    &:active
+        opacity: .3
+
+.header
+    margin-top: 40px
+    &-inner
+        background: $special-yellow
+        padding: 44px 60px 50px
+    &-logo
+        margin-top: -64px
+        display: block
+        margin-bottom: 29px
+    &-top
+        margin-bottom: 50px
+        display: flex
+        justify-content: space-between
+        align-items: center
+        gap: 20px
+        position: relative
+        z-index: 2
+        &__form
+            flex-grow: 1
+            max-width: 440px
+            display: flex
+            input
+                flex-grow: 1
+                background: url("../../img/icons/search.svg") left center no-repeat
+                border: 0
+                padding: 16px 18px 14px 38px
+                outline: none
+                font-family: 'Open Sans'
+                font-size: 15px
+                font-weight: 300
+                background-image: linear-gradient(to bottom, $basic-black 0%, $basic-black 100%)
+                background-size: 0px 2px
+                background-position: right bottom
+                background-repeat: no-repeat
+                @include trans(all, 0, .3s)
+                &::placeholder
+                    @include trans(opacity)
+                    opacity: .3
+                &:hover::placeholder
+                    opacity: .6
+                &:focus
+                    background-size: 100% 2px
+                    & + button
+                        opacity: 1
+                        visibility: visible
+                        transform: rotate(0)
+                &:not(:placeholder-shown)
+                    background-size: 100% 2px
+                    & + button
+                        opacity: 1
+                        visibility: visible
+                        transform: rotate(0)
+            button
+                cursor: pointer
+                outline: none
+                padding: 15px 17px
+                border: 2px solid $basic-black
+                background: 0
+                opacity: 0
+                visibility: hidden
+                text-transform: uppercase
+                font-family: 'Open Sans'
+                font-size: 15px
+                font-weight: 300
+                transform: rotateY(90deg)
+                transform-origin: left
+                @include trans((transform, background-color, color, opacity, visibility))
+                &:hover
+                    background-color: $basic-black
+                    color: $basic-white
+                &:active
+                    background-color: $basic-black
+                    color: rgba(255, 255, 255, .3)    
+        &__list
+            display: flex
+            justify-content: flex-end
+            flex-grow: 1
+            max-width: 500px
+            a
+                text-decoration: none
+                color: $basic-black
+                font-family: 'Open Sans'
+                font-size: 15px
+                font-weight: 300
+                &:not(:last-child)
+                    margin-right: 40px
+                &:first-child
+                    margin-right: auto           
+                img
+                    vertical-align: middle
+                    margin-right: 11px
+    &-bottom
+        display: flex
+        justify-content: flex-end
+        align-items: center
+        gap: 20px
+        position: relative
+        z-index: 2
+        &__catalog
+            margin-right: auto
+            button
+                background: 0
+                border: 0
+                font-family: 'Gilroy'
+                font-size: 18px
+                font-weight: 800
+                line-height: 22px
+                letter-spacing: .2em
+                text-transform: uppercase
+                display: flex
+                align-items: center
+                cursor: pointer
+                &:hover
+                    color: rgba(0, 0, 0, .6)
+                &:active
+                    color: rgba(0, 0, 0, .3)
+                &.active
+                    + ul
+                        opacity: 1
+                        visibility: visible
+                        transform: translateY(0)
+                    svg
+                        transform: rotateZ(45deg)
+                svg
+                    transition: transform .123s ease-out
+                    margin-left: 16px
+                    pointer-events: none
+            ul
+                position: absolute
+                list-style: none
+                padding: 0
+                margin: 0
+                width: 100%
+                background: $special-yellow
+                box-sizing: content-box
+                padding: 64px var(--container-horizontal-padding) 39px
+                left: calc(-1 * var(--container-horizontal-padding))
+                display: grid
+                grid-template-columns: 1fr 1fr 1fr 1fr 1fr
+                gap: 20px
+                opacity: 0
+                visibility: hidden
+                transform: translateY(-50px)
+                z-index: -1
+                @include trans((transform, opacity, visibility))
+                a
+                    color: $basic-black
+                    text-decoration: none
+                    font-size: 15px
+                    font-family: 'Open Sans'
+                    font-weight: 300
+                    line-height: 20px
+        &__nav
+            max-width: 500px
+            flex-grow: 1
+            display: flex
+            a
+                text-transform: uppercase
+                font-family: 'Gilroy'
+                font-size: 18px
+                font-weight: 800
+                letter-spacing: .2em
+                line-height: 22px
+                color: $basic-black
+                text-decoration: none
+                &:not(:first-child)
+                    margin-left: 38px
+                &:last-child
+                    margin-left: auto
+    &-line
+        margin: 69px 400px 38px 0
+        display: flex
+        justify-content: flex-end
+        &::before
+            content: ''
+            display: inline-block
+            width: 100px
+            height: 7px
+            background-color: $basic-white
+    
+                    
+
