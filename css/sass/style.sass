@@ -88,6 +88,33 @@ body
     &:active
         opacity: .3
 
+.button-w-line
+    position: relative
+    z-index: 2
+    display: inline-flex
+    align-items: center
+    justify-content: center
+    font-family: 'Gilroy'
+    font-size: 18px
+    line-height: 22px
+    text-transform: uppercase
+    letter-spacing: .2em
+    color: $basic-black
+    text-decoration: none
+    font-weight: 800
+    padding: 0 43px
+    &::before
+        content: ''
+        display: inline-block
+        position: absolute
+        z-index: -1
+        height: 8px
+        width: 100%
+        background-color: $special-yellow-dark
+        @include trans(height)
+    &:hover:before
+        height: 40px
+
 .header
     margin-top: 40px
     &-inner
@@ -111,17 +138,13 @@ body
             display: flex
             input
                 flex-grow: 1
-                background: url("../../img/icons/search.svg") left center no-repeat
+                background: linear-gradient(to bottom, $basic-black 0%, $basic-black 100%) right bottom / 0px 2px no-repeat, url("../../img/icons/search.svg") left center no-repeat 
                 border: 0
                 padding: 16px 18px 14px 38px
                 outline: none
                 font-family: 'Open Sans'
                 font-size: 15px
                 font-weight: 300
-                background-image: linear-gradient(to bottom, $basic-black 0%, $basic-black 100%)
-                background-size: 0px 2px
-                background-position: right bottom
-                background-repeat: no-repeat
                 @include trans(all, 0, .3s)
                 &::placeholder
                     @include trans(opacity)
@@ -129,13 +152,13 @@ body
                 &:hover::placeholder
                     opacity: .6
                 &:focus
-                    background-size: 100% 2px
+                    background-size: 100% 2px, auto
                     & + button
                         opacity: 1
                         visibility: visible
                         transform: rotate(0)
                 &:not(:placeholder-shown)
-                    background-size: 100% 2px
+                    background-size: 100% 2px, auto
                     & + button
                         opacity: 1
                         visibility: visible
@@ -267,6 +290,155 @@ body
             width: 100px
             height: 7px
             background-color: $basic-white
-    
+.popular
+    margin-top: -47px
+    counter-reset: slide
+    &-inner
+        overflow: visible
+    &-swiper
+        overflow: visible
+    &-item
+        display: flex
+        align-items: center
+        gap: 20px
+        overflow: visible !important
+        &:before
+            counter-increment: slide
+            content: '0'counter(slide)
+            font-size: 179px
+            font-family: 'Gilroy'
+            font-weight: 800
+            color: $basic-white
+            line-height: 219px
+            text-transform: uppercase
+            position: absolute
+            top: -110px
+            right: 100px
+            z-index: -1
+            opacity: 0
+            visibility: hidden
+            @include trans((opacity, visibility, right))
+        &-active:before
+            right: 0
+            opacity: 1
+            visibility: visible
+            @include trans((opacity, visibility, right), .9s)
+        &-active
+            opacity: 1
+            visibility: visible
+        &-active &__title strong
+            transform: translateY(0)
+            @include trans(transform, .2s)
+        &-active &__img img
+            opacity: 1
+            visibility: visible
+            transform: translate(0, 0)
+        &-active &__description p
+            opacity: 1
+            visibility: visible
+            transform: translateY(0)
+            @include trans(transform, .4s)
+        &-active &__btns
+            opacity: 1
+            visibility: visible
+        &-active &__list
+            visibility: visible
+            opacity: 1
+            transform: translateY(0)
+            @include trans((opacity, transform, visibility), .8s)
+        &__img
+            flex-grow: 1
+            max-width: 500px
+            display: flex
+            justify-content: center
+            align-items: center
+            height: 200px
+            img
+                opacity: 0
+                visibility: hidden
+                transform: translate(-100%, -20%)
+                @include trans((opacity, visibility, transform), .2s, (.123s, .2s, .2s))
+        &__info
+            max-width: 500px
+            width: 100%
+        &__title
+            font-family: 'Gilroy'
+            font-weight: 800
+            font-size: 47px
+            line-height: 58px
+            max-width: 495px
+            overflow: hidden
+            strong
+                @include trans(transform)
+                transform: translateY(-100%)
+                display: inline-block
+        &__description
+            font-family: 'Open Sans'
+            font-weight: 300
+            font-size: 15px
+            line-height: 20px
+            margin: 30px 0 60px
+            max-width: 472px
+            overflow: hidden
+            p
+                margin: 0
+                @include trans(transform)
+                transform: translateY(-100%)
+        &__btns
+            display: flex
+            justify-content: space-between
+            align-items: center
+            opacity: 0
+            visibility: hidden
+        &__pagination
+            position: static
+            display: flex
+            align-items: center
+            width: auto !important
+            .swiper-pagination-bullet
+                display: inline-flex
+                align-items: center
+                justify-content: center
+                width: 12px
+                height: 12px
+                border: 1px solid $basic-black
+                background: 0
+                opacity: 1
+                margin: 0 !important
+                & + .swiper-pagination-bullet
+                    margin-left: 18px !important
+                &:before
+                    content: ''
+                    display: inline-block
+                    width: 4px
+                    height: 4px
+                    border: 1px solid $basic-black
+                    border-radius: 50%
+                    box-sizing: border-box
+                    opacity: 0
+                &-active:before
+                    opacity: 1
+        &__list
+            display: flex
+            gap: 25px
+            list-style: none
+            padding: 0
+            margin: 60px 0 0
+            opacity: 0
+            visibility: hidden
+            transform: translateY(-50%)
+            @include trans((opacity, visibility, transform))
+            li
+                font-family: 'Gilroy'
+                font-size: 13px
+                font-weight: 300
+                letter-spacing: .1em
+                line-height: 15px
+            span
+                font-size: 36px
+                display: block
+                margin-bottom: 15px
+                line-height: 42px
+
                     
 
