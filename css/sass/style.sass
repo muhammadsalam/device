@@ -103,6 +103,7 @@ body
     text-decoration: none
     font-weight: 800
     padding: 0 43px
+    @include trans(color)
     &::before
         content: ''
         display: inline-block
@@ -114,6 +115,10 @@ body
         @include trans(height)
     &:hover:before
         height: 40px
+    &:active
+        color: rgba(0, 0, 0, .3)
+        &:before
+            height: 40px
 
 .header
     margin-top: 40px
@@ -439,6 +444,43 @@ body
                 display: block
                 margin-bottom: 15px
                 line-height: 42px
-
-                    
-
+.categories
+    margin-top: 116px
+    &-inner
+        padding: 0
+        display: flex
+        flex-wrap: wrap
+        gap: 40px
+    &-item
+        flex: 1 0 150px
+        max-width: 200px
+        text-decoration: none
+        &__img
+            height: 160px
+            display: flex
+            justify-content: center
+            align-items: center
+            margin-bottom: 38px
+            background-color: $special-yellow
+            @include trans(background-color)
+            img
+                max-width: 100%
+                max-height: 100%
+                pointer-events: none
+                @include trans(opacity)
+        &__title
+            color: $basic-black
+            font-size: 18px
+            font-family: 'Gilroy'
+            font-weight: 800
+            letter-spacing: .05em
+            line-height: 22px
+            @include trans(opacity)
+        &:hover &__img
+            background-color: $special-yellow-dark
+        &:active &__img
+            background-color: $special-yellow-dark
+            img
+                opacity: .3
+        &:active &__title
+            opacity: .3        
