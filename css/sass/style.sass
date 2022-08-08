@@ -11,7 +11,10 @@ $special-green: #91c92f
 
 $status-pink: #f6dada
 
-$transition-duration: .123s
+$transition-duration: .2s
+
+$fgl: 'Gilroy', sans-serif
+$fos: 'Open Sans', sans-serif
 
 
 @mixin trans($property, $delay: 0s, $duration: $transition-duration)
@@ -19,7 +22,6 @@ $transition-duration: .123s
     transition-duration: $duration
     transition-timing-function: ease-out
     transition-delay: $delay
-  
 
 @font-face
     font-family: 'Gilroy'
@@ -94,7 +96,7 @@ body
     display: inline-flex
     align-items: center
     justify-content: center
-    font-family: 'Gilroy'
+    font-family: $fgl
     font-size: 18px
     line-height: 22px
     text-transform: uppercase
@@ -108,11 +110,12 @@ body
         content: ''
         display: inline-block
         position: absolute
+        left: 0
         z-index: -1
         height: 8px
         width: 100%
         background-color: $special-yellow-dark
-        @include trans(height)
+        @include trans((height, background-color, width), (0s, 0s, .2s))
     &:hover:before
         height: 40px
     &:active
@@ -147,7 +150,7 @@ body
                 border: 0
                 padding: 16px 18px 14px 38px
                 outline: none
-                font-family: 'Open Sans'
+                font-family: $fos
                 font-size: 15px
                 font-weight: 300
                 @include trans(all, 0, .3s)
@@ -177,7 +180,7 @@ body
                 opacity: 0
                 visibility: hidden
                 text-transform: uppercase
-                font-family: 'Open Sans'
+                font-family: $fos
                 font-size: 15px
                 font-weight: 300
                 transform: rotateY(90deg)
@@ -197,7 +200,7 @@ body
             a
                 text-decoration: none
                 color: $basic-black
-                font-family: 'Open Sans'
+                font-family: $fos
                 font-size: 15px
                 font-weight: 300
                 &:not(:last-child)
@@ -219,7 +222,7 @@ body
             button
                 background: 0
                 border: 0
-                font-family: 'Gilroy'
+                font-family: $fgl
                 font-size: 18px
                 font-weight: 800
                 line-height: 22px
@@ -240,7 +243,7 @@ body
                     svg
                         transform: rotateZ(45deg)
                 svg
-                    transition: transform .123s ease-out
+                    transition: transform .2s ease-out
                     margin-left: 16px
                     pointer-events: none
             ul
@@ -265,7 +268,7 @@ body
                     color: $basic-black
                     text-decoration: none
                     font-size: 15px
-                    font-family: 'Open Sans'
+                    font-family: $fos
                     font-weight: 300
                     line-height: 20px
         &__nav
@@ -274,7 +277,7 @@ body
             display: flex
             a
                 text-transform: uppercase
-                font-family: 'Gilroy'
+                font-family: $fgl
                 font-size: 18px
                 font-weight: 800
                 letter-spacing: .2em
@@ -311,7 +314,7 @@ body
             counter-increment: slide
             content: '0'counter(slide)
             font-size: 179px
-            font-family: 'Gilroy'
+            font-family: $fgl
             font-weight: 800
             color: $basic-white
             line-height: 219px
@@ -350,7 +353,7 @@ body
             visibility: visible
             opacity: 1
             transform: translateY(0)
-            @include trans((opacity, transform, visibility), .8s)
+            @include trans((opacity, transform, visibility), .6s)
         &__img
             flex-grow: 1
             max-width: 500px
@@ -362,12 +365,12 @@ body
                 opacity: 0
                 visibility: hidden
                 transform: translate(-100%, -20%)
-                @include trans((opacity, visibility, transform), .2s, (.123s, .2s, .2s))
+                @include trans((opacity, visibility, transform), .2s, (.2s, .2s, .2s))
         &__info
             max-width: 500px
             width: 100%
         &__title
-            font-family: 'Gilroy'
+            font-family: $fgl
             font-weight: 800
             font-size: 47px
             line-height: 58px
@@ -378,7 +381,7 @@ body
                 transform: translateY(-100%)
                 display: inline-block
         &__description
-            font-family: 'Open Sans'
+            font-family: $fos
             font-weight: 300
             font-size: 15px
             line-height: 20px
@@ -434,7 +437,7 @@ body
             transform: translateY(-50%)
             @include trans((opacity, visibility, transform))
             li
-                font-family: 'Gilroy'
+                font-family: $fgl
                 font-size: 13px
                 font-weight: 300
                 letter-spacing: .1em
@@ -471,7 +474,7 @@ body
         &__title
             color: $basic-black
             font-size: 18px
-            font-family: 'Gilroy'
+            font-family: $fgl
             font-weight: 800
             letter-spacing: .05em
             line-height: 22px
@@ -483,4 +486,92 @@ body
             img
                 opacity: .3
         &:active &__title
-            opacity: .3        
+            opacity: .3
+.about
+    margin-top: 184px
+    padding-bottom: 68px
+    background-color: $basic-light-gray
+    .container
+        padding: 0
+    &-inner
+        margin-top: -100px
+        display: inline-flex
+        align-items: flex-start
+        padding: 0
+        position: relative
+        z-index: 2
+        width: 100%
+    &-buttons
+        border-right: 7px solid $basic-black
+        display: flex
+        flex-direction: column
+        --padding-right: 117px
+        padding: 89px var(--padding-right) 86px 0
+        &__item
+            background: 0
+            border: 0
+            outline: 0
+            padding: 0 24px
+            margin: 0
+            &.active
+                color: $special-yellow
+                &:before
+                    background-color: $basic-black
+                    height: 40px
+                    width: calc(100% + var(--padding-right) + 1px)
+            & + &
+                margin-top: 40px
+    &-tabs
+        padding-top: 60px
+        position: relative
+        flex-grow: 1
+    &-tab
+        padding-left: 116px
+        width: 100%
+        position: absolute
+        &__content
+            max-width: 540px
+        &__title
+            margin: 0 0 40px
+            overflow: hidden
+            h2
+                line-height: 58px
+                letter-spacing: .2em
+                font-family: $fgl
+                font-weight: 800
+                font-size: 47px
+                margin: 0
+                transform: translateX(-100%)
+                text-transform: capitalize
+                @include trans(transform)
+        &__description
+            overflow: hidden
+            p
+                transform: translateX(-100%)
+                font-family: $fos
+                font-weight: 300
+                font-size: 15px
+                line-height: 30px
+                letter-spacing: .08em
+                margin: 0
+                @include trans(transform)
+        &__img
+            position: absolute
+            z-index: -1
+            right: 0
+            top: -23px
+            transform: translateY(50px)
+            opacity: 0
+            visibility: hidden
+            @include trans((transform, opacity, visibility))
+        &.active &__title h2
+            transform: translateX(0)
+            @include trans(transform, .2s)
+        &.active &__description p
+            transform: translateX(0)
+            @include trans(transform, .4s)
+        &.active &__img
+            transform: translateY(0)
+            opacity: 1
+            visibility: visible
+            @include trans((transform, opacity, visibility), .35s)

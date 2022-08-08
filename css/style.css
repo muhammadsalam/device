@@ -66,8 +66,8 @@ body {
   opacity: 1;
   -webkit-transition-property: opacity;
   transition-property: opacity;
-  -webkit-transition-duration: 0.123s;
-          transition-duration: 0.123s;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
   -webkit-transition-timing-function: ease-out;
           transition-timing-function: ease-out;
   -webkit-transition-delay: 0s;
@@ -92,7 +92,7 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  font-family: "Gilroy";
+  font-family: "Gilroy", sans-serif;
   font-size: 18px;
   line-height: 22px;
   text-transform: uppercase;
@@ -103,8 +103,8 @@ body {
   padding: 0 43px;
   -webkit-transition-property: color;
   transition-property: color;
-  -webkit-transition-duration: 0.123s;
-          transition-duration: 0.123s;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
   -webkit-transition-timing-function: ease-out;
           transition-timing-function: ease-out;
   -webkit-transition-delay: 0s;
@@ -114,18 +114,19 @@ body {
   content: "";
   display: inline-block;
   position: absolute;
+  left: 0;
   z-index: -1;
   height: 8px;
   width: 100%;
   background-color: #f0c52e;
-  -webkit-transition-property: height;
-  transition-property: height;
-  -webkit-transition-duration: 0.123s;
-          transition-duration: 0.123s;
+  -webkit-transition-property: height, background-color, width;
+  transition-property: height, background-color, width;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
   -webkit-transition-timing-function: ease-out;
           transition-timing-function: ease-out;
-  -webkit-transition-delay: 0s;
-          transition-delay: 0s;
+  -webkit-transition-delay: 0s, 0s, 0.2s;
+          transition-delay: 0s, 0s, 0.2s;
 }
 .button-w-line:hover:before {
   height: 40px;
@@ -182,7 +183,7 @@ body {
   border: 0;
   padding: 16px 18px 14px 38px;
   outline: none;
-  font-family: "Open Sans";
+  font-family: "Open Sans", sans-serif;
   font-size: 15px;
   font-weight: 300;
   -webkit-transition-property: all;
@@ -197,8 +198,8 @@ body {
 .header-top__form input::-webkit-input-placeholder {
   -webkit-transition-property: opacity;
   transition-property: opacity;
-  -webkit-transition-duration: 0.123s;
-          transition-duration: 0.123s;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
   -webkit-transition-timing-function: ease-out;
           transition-timing-function: ease-out;
   -webkit-transition-delay: 0s;
@@ -208,7 +209,7 @@ body {
 .header-top__form input::-moz-placeholder {
   -moz-transition-property: opacity;
   transition-property: opacity;
-  transition-duration: 0.123s;
+  transition-duration: 0.2s;
   transition-timing-function: ease-out;
   transition-delay: 0s;
   opacity: 0.3;
@@ -216,7 +217,7 @@ body {
 .header-top__form input:-ms-input-placeholder {
   -ms-transition-property: opacity;
   transition-property: opacity;
-  transition-duration: 0.123s;
+  transition-duration: 0.2s;
   transition-timing-function: ease-out;
   transition-delay: 0s;
   opacity: 0.3;
@@ -224,7 +225,7 @@ body {
 .header-top__form input::-ms-input-placeholder {
   -ms-transition-property: opacity;
   transition-property: opacity;
-  transition-duration: 0.123s;
+  transition-duration: 0.2s;
   transition-timing-function: ease-out;
   transition-delay: 0s;
   opacity: 0.3;
@@ -232,8 +233,8 @@ body {
 .header-top__form input::placeholder {
   -webkit-transition-property: opacity;
   transition-property: opacity;
-  -webkit-transition-duration: 0.123s;
-          transition-duration: 0.123s;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
   -webkit-transition-timing-function: ease-out;
           transition-timing-function: ease-out;
   -webkit-transition-delay: 0s;
@@ -298,7 +299,7 @@ body {
   opacity: 0;
   visibility: hidden;
   text-transform: uppercase;
-  font-family: "Open Sans";
+  font-family: "Open Sans", sans-serif;
   font-size: 15px;
   font-weight: 300;
   -webkit-transform: rotateY(90deg);
@@ -309,8 +310,8 @@ body {
   transition-property: background-color, color, opacity, visibility, -webkit-transform;
   transition-property: transform, background-color, color, opacity, visibility;
   transition-property: transform, background-color, color, opacity, visibility, -webkit-transform;
-  -webkit-transition-duration: 0.123s;
-          transition-duration: 0.123s;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
   -webkit-transition-timing-function: ease-out;
           transition-timing-function: ease-out;
   -webkit-transition-delay: 0s;
@@ -339,7 +340,7 @@ body {
 .header-top__list a {
   text-decoration: none;
   color: #000000;
-  font-family: "Open Sans";
+  font-family: "Open Sans", sans-serif;
   font-size: 15px;
   font-weight: 300;
 }
@@ -373,7 +374,7 @@ body {
 .header-bottom__catalog button {
   background: 0;
   border: 0;
-  font-family: "Gilroy";
+  font-family: "Gilroy", sans-serif;
   font-size: 18px;
   font-weight: 800;
   line-height: 22px;
@@ -404,10 +405,10 @@ body {
           transform: rotateZ(45deg);
 }
 .header-bottom__catalog button svg {
-  -webkit-transition: -webkit-transform 0.123s ease-out;
-  transition: -webkit-transform 0.123s ease-out;
-  transition: transform 0.123s ease-out;
-  transition: transform 0.123s ease-out, -webkit-transform 0.123s ease-out;
+  -webkit-transition: -webkit-transform 0.2s ease-out;
+  transition: -webkit-transform 0.2s ease-out;
+  transition: transform 0.2s ease-out;
+  transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out;
   margin-left: 16px;
   pointer-events: none;
 }
@@ -436,8 +437,8 @@ body {
   transition-property: opacity, visibility, -webkit-transform;
   transition-property: transform, opacity, visibility;
   transition-property: transform, opacity, visibility, -webkit-transform;
-  -webkit-transition-duration: 0.123s;
-          transition-duration: 0.123s;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
   -webkit-transition-timing-function: ease-out;
           transition-timing-function: ease-out;
   -webkit-transition-delay: 0s;
@@ -447,7 +448,7 @@ body {
   color: #000000;
   text-decoration: none;
   font-size: 15px;
-  font-family: "Open Sans";
+  font-family: "Open Sans", sans-serif;
   font-weight: 300;
   line-height: 20px;
 }
@@ -462,7 +463,7 @@ body {
 }
 .header-bottom__nav a {
   text-transform: uppercase;
-  font-family: "Gilroy";
+  font-family: "Gilroy", sans-serif;
   font-size: 18px;
   font-weight: 800;
   letter-spacing: 0.2em;
@@ -517,7 +518,7 @@ body {
   counter-increment: slide;
   content: "0" counter(slide);
   font-size: 179px;
-  font-family: "Gilroy";
+  font-family: "Gilroy", sans-serif;
   font-weight: 800;
   color: #FFFFFF;
   line-height: 219px;
@@ -530,8 +531,8 @@ body {
   visibility: hidden;
   -webkit-transition-property: opacity, visibility, right;
   transition-property: opacity, visibility, right;
-  -webkit-transition-duration: 0.123s;
-          transition-duration: 0.123s;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
   -webkit-transition-timing-function: ease-out;
           transition-timing-function: ease-out;
   -webkit-transition-delay: 0s;
@@ -543,8 +544,8 @@ body {
   visibility: visible;
   -webkit-transition-property: opacity, visibility, right;
   transition-property: opacity, visibility, right;
-  -webkit-transition-duration: 0.123s;
-          transition-duration: 0.123s;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
   -webkit-transition-timing-function: ease-out;
           transition-timing-function: ease-out;
   -webkit-transition-delay: 0.9s;
@@ -561,8 +562,8 @@ body {
   transition-property: -webkit-transform;
   transition-property: transform;
   transition-property: transform, -webkit-transform;
-  -webkit-transition-duration: 0.123s;
-          transition-duration: 0.123s;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
   -webkit-transition-timing-function: ease-out;
           transition-timing-function: ease-out;
   -webkit-transition-delay: 0.2s;
@@ -583,8 +584,8 @@ body {
   transition-property: -webkit-transform;
   transition-property: transform;
   transition-property: transform, -webkit-transform;
-  -webkit-transition-duration: 0.123s;
-          transition-duration: 0.123s;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
   -webkit-transition-timing-function: ease-out;
           transition-timing-function: ease-out;
   -webkit-transition-delay: 0.4s;
@@ -603,12 +604,12 @@ body {
   transition-property: opacity, visibility, -webkit-transform;
   transition-property: opacity, transform, visibility;
   transition-property: opacity, transform, visibility, -webkit-transform;
-  -webkit-transition-duration: 0.123s;
-          transition-duration: 0.123s;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
   -webkit-transition-timing-function: ease-out;
           transition-timing-function: ease-out;
-  -webkit-transition-delay: 0.8s;
-          transition-delay: 0.8s;
+  -webkit-transition-delay: 0.6s;
+          transition-delay: 0.6s;
 }
 .popular-item__img {
   -webkit-box-flex: 1;
@@ -635,8 +636,8 @@ body {
   transition-property: opacity, visibility, -webkit-transform;
   transition-property: opacity, visibility, transform;
   transition-property: opacity, visibility, transform, -webkit-transform;
-  -webkit-transition-duration: 0.123s, 0.2s, 0.2s;
-          transition-duration: 0.123s, 0.2s, 0.2s;
+  -webkit-transition-duration: 0.2s, 0.2s, 0.2s;
+          transition-duration: 0.2s, 0.2s, 0.2s;
   -webkit-transition-timing-function: ease-out;
           transition-timing-function: ease-out;
   -webkit-transition-delay: 0.2s;
@@ -647,7 +648,7 @@ body {
   width: 100%;
 }
 .popular-item__title {
-  font-family: "Gilroy";
+  font-family: "Gilroy", sans-serif;
   font-weight: 800;
   font-size: 47px;
   line-height: 58px;
@@ -659,8 +660,8 @@ body {
   transition-property: -webkit-transform;
   transition-property: transform;
   transition-property: transform, -webkit-transform;
-  -webkit-transition-duration: 0.123s;
-          transition-duration: 0.123s;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
   -webkit-transition-timing-function: ease-out;
           transition-timing-function: ease-out;
   -webkit-transition-delay: 0s;
@@ -670,7 +671,7 @@ body {
   display: inline-block;
 }
 .popular-item__description {
-  font-family: "Open Sans";
+  font-family: "Open Sans", sans-serif;
   font-weight: 300;
   font-size: 15px;
   line-height: 20px;
@@ -684,8 +685,8 @@ body {
   transition-property: -webkit-transform;
   transition-property: transform;
   transition-property: transform, -webkit-transform;
-  -webkit-transition-duration: 0.123s;
-          transition-duration: 0.123s;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
   -webkit-transition-timing-function: ease-out;
           transition-timing-function: ease-out;
   -webkit-transition-delay: 0s;
@@ -766,15 +767,15 @@ body {
   transition-property: opacity, visibility, -webkit-transform;
   transition-property: opacity, visibility, transform;
   transition-property: opacity, visibility, transform, -webkit-transform;
-  -webkit-transition-duration: 0.123s;
-          transition-duration: 0.123s;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
   -webkit-transition-timing-function: ease-out;
           transition-timing-function: ease-out;
   -webkit-transition-delay: 0s;
           transition-delay: 0s;
 }
 .popular-item__list li {
-  font-family: "Gilroy";
+  font-family: "Gilroy", sans-serif;
   font-size: 13px;
   font-weight: 300;
   letter-spacing: 0.1em;
@@ -821,8 +822,8 @@ body {
   background-color: #F7E296;
   -webkit-transition-property: background-color;
   transition-property: background-color;
-  -webkit-transition-duration: 0.123s;
-          transition-duration: 0.123s;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
   -webkit-transition-timing-function: ease-out;
           transition-timing-function: ease-out;
   -webkit-transition-delay: 0s;
@@ -834,8 +835,8 @@ body {
   pointer-events: none;
   -webkit-transition-property: opacity;
   transition-property: opacity;
-  -webkit-transition-duration: 0.123s;
-          transition-duration: 0.123s;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
   -webkit-transition-timing-function: ease-out;
           transition-timing-function: ease-out;
   -webkit-transition-delay: 0s;
@@ -844,14 +845,14 @@ body {
 .categories-item__title {
   color: #000000;
   font-size: 18px;
-  font-family: "Gilroy";
+  font-family: "Gilroy", sans-serif;
   font-weight: 800;
   letter-spacing: 0.05em;
   line-height: 22px;
   -webkit-transition-property: opacity;
   transition-property: opacity;
-  -webkit-transition-duration: 0.123s;
-          transition-duration: 0.123s;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
   -webkit-transition-timing-function: ease-out;
           transition-timing-function: ease-out;
   -webkit-transition-delay: 0s;
@@ -868,4 +869,183 @@ body {
 }
 .categories-item:active .categories-item__title {
   opacity: 0.3;
+}
+
+.about {
+  margin-top: 184px;
+  padding-bottom: 68px;
+  background-color: #e5e5e5;
+}
+.about .container {
+  padding: 0;
+}
+.about-inner {
+  margin-top: -100px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 0;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+.about-buttons {
+  border-right: 7px solid #000000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  --padding-right: 117px;
+  padding: 89px var(--padding-right) 86px 0;
+}
+.about-buttons__item {
+  background: 0;
+  border: 0;
+  outline: 0;
+  padding: 0 24px;
+  margin: 0;
+}
+.about-buttons__item.active {
+  color: #F7E296;
+}
+.about-buttons__item.active:before {
+  background-color: #000000;
+  height: 40px;
+  width: calc(100% + var(--padding-right) + 1px);
+}
+.about-buttons__item + .about-buttons__item {
+  margin-top: 40px;
+}
+.about-tabs {
+  padding-top: 60px;
+  position: relative;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+.about-tab {
+  padding-left: 116px;
+  width: 100%;
+  position: absolute;
+}
+.about-tab__content {
+  max-width: 540px;
+}
+.about-tab__title {
+  margin: 0 0 40px;
+  overflow: hidden;
+}
+.about-tab__title h2 {
+  line-height: 58px;
+  letter-spacing: 0.2em;
+  font-family: "Gilroy", sans-serif;
+  font-weight: 800;
+  font-size: 47px;
+  margin: 0;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  text-transform: capitalize;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+  -webkit-transition-timing-function: ease-out;
+          transition-timing-function: ease-out;
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+}
+.about-tab__description {
+  overflow: hidden;
+}
+.about-tab__description p {
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 30px;
+  letter-spacing: 0.08em;
+  margin: 0;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+  -webkit-transition-timing-function: ease-out;
+          transition-timing-function: ease-out;
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+}
+.about-tab__img {
+  position: absolute;
+  z-index: -1;
+  right: 0;
+  top: -23px;
+  -webkit-transform: translateY(50px);
+          transform: translateY(50px);
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition-property: opacity, visibility, -webkit-transform;
+  transition-property: opacity, visibility, -webkit-transform;
+  transition-property: transform, opacity, visibility;
+  transition-property: transform, opacity, visibility, -webkit-transform;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+  -webkit-transition-timing-function: ease-out;
+          transition-timing-function: ease-out;
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+}
+.about-tab.active .about-tab__title h2 {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+  -webkit-transition-timing-function: ease-out;
+          transition-timing-function: ease-out;
+  -webkit-transition-delay: 0.2s;
+          transition-delay: 0.2s;
+}
+.about-tab.active .about-tab__description p {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+  -webkit-transition-timing-function: ease-out;
+          transition-timing-function: ease-out;
+  -webkit-transition-delay: 0.4s;
+          transition-delay: 0.4s;
+}
+.about-tab.active .about-tab__img {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition-property: opacity, visibility, -webkit-transform;
+  transition-property: opacity, visibility, -webkit-transform;
+  transition-property: transform, opacity, visibility;
+  transition-property: transform, opacity, visibility, -webkit-transform;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+  -webkit-transition-timing-function: ease-out;
+          transition-timing-function: ease-out;
+  -webkit-transition-delay: 0.35s;
+          transition-delay: 0.35s;
 }
