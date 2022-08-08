@@ -105,6 +105,8 @@ body
     text-decoration: none
     font-weight: 800
     padding: 0 43px
+    background: 0
+    border: 0
     @include trans(color)
     &::before
         content: ''
@@ -487,7 +489,7 @@ body
                 opacity: .3
         &:active &__title
             opacity: .3
-.about
+.services
     margin-top: 184px
     padding-bottom: 68px
     background-color: $basic-light-gray
@@ -575,3 +577,17 @@ body
             opacity: 1
             visibility: visible
             @include trans((transform, opacity, visibility), .35s)
+.companies
+    margin: 90px 0
+    &-inner
+        padding: 0
+    &-slider
+        &__item
+            width: auto
+            img
+                filter: saturate(2) grayscale(1)
+                @include trans(filter)
+            &:hover img
+                filter: saturate(2)
+                @include trans(filter)
+

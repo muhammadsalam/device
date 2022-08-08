@@ -18,35 +18,34 @@ const popularSlider = new Swiper('.popular-inner', {
 })
 
 
-// обработка табов в блоке .about
-
+// обработка табов в блоке .services
 // кнопки и табы
-const aboutButtons = document.querySelectorAll('.about-buttons__item');
-const aboutTabs = document.querySelectorAll('.about-tab');
-console.log(aboutButtons)
+const servicesButtons = document.querySelectorAll('.services-buttons__item');
+const servicesTabs = document.querySelectorAll('.services-tab');
+console.log(servicesButtons)
 // переназначение класса active для кнопок
 function buttonToggle(id){
     // удаление активного класса
-    for(let buttonId = 0; buttonId < aboutButtons.length; buttonId++){
-        aboutButtons[buttonId].classList.remove('active');
+    for(let buttonId = 0; buttonId < servicesButtons.length; buttonId++){
+        servicesButtons[buttonId].classList.remove('active');
     }
     // добавление активного класса
-    aboutButtons[id].classList.add('active');
+    servicesButtons[id].classList.add('active');
 }
 
 // переназначение класса active для табов
 function tabToggle(id){
     // удаление активного класса
-    for(let tabId = 0; tabId < aboutTabs.length; tabId++){
-        aboutTabs[tabId].classList.remove('active');
+    for(let tabId = 0; tabId < servicesTabs.length; tabId++){
+        servicesTabs[tabId].classList.remove('active');
     }
     // добавление активного класса
-    aboutTabs[id].classList.add('active');
+    servicesTabs[id].classList.add('active');
 }
 
 // добавление функции на клик кнопкам
-for (let i = 0; i < aboutButtons.length; i++) {
-    aboutButtons[i].onclick = function () {
+for (let i = 0; i < servicesButtons.length; i++) {
+    servicesButtons[i].onclick = function () {
         console.log('clicked ' + i);
         buttonToggle(i);
         tabToggle(i);
@@ -54,4 +53,9 @@ for (let i = 0; i < aboutButtons.length; i++) {
 }
 
 
-
+// слайдер с логотипами компаний
+const companiesSlider = new Swiper('.companies-inner', {
+    slidesPerView: 'auto',
+    spaceBetween: 40,
+    freeMode: true
+});
