@@ -55,7 +55,13 @@ for (let i = 0; i < servicesButtons.length; i++) {
 
 // слайдер с логотипами компаний
 const companiesSlider = new Swiper('.companies-inner', {
+    slideActiveClass: 'companies-slider__item--active',
+    allowTouchMove: false,
+    centeredSlides: true,
     slidesPerView: 'auto',
     spaceBetween: 40,
-    freeMode: true
+    loop: true,
+    autoplay: {
+        delay: 2000
+    }
 });

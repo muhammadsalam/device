@@ -584,10 +584,11 @@ body
     &-slider
         &__item
             width: auto
-            img
-                filter: saturate(2) grayscale(1)
-                @include trans(filter)
-            &:hover img
+            filter: saturate(2) grayscale(1)
+            @include trans(filter)
+            &--active
                 filter: saturate(2)
                 @include trans(filter)
-
+            &:hover
+                filter: saturate(2)
+                @include trans(filter)
