@@ -352,7 +352,7 @@ body {
 .header-top__list a:first-child {
   margin-right: auto;
 }
-.header-top__list a img {
+.header-top__list a svg {
   vertical-align: middle;
   margin-right: 11px;
 }
@@ -1053,7 +1053,7 @@ body {
 }
 
 .companies {
-  margin: 90px 0;
+  margin: 90px 0 4px;
 }
 .companies-inner {
   padding: 0;
@@ -1100,4 +1100,92 @@ body {
           transition-timing-function: ease-out;
   -webkit-transition-delay: 0s;
           transition-delay: 0s;
+}
+
+.block-line {
+  width: 80px;
+  height: 7px;
+  background-color: #000000;
+  margin-bottom: 50px;
+}
+
+.block-title {
+  margin: 0 0 50px;
+  font-size: 47px;
+  font-weight: 800;
+  line-height: 58px;
+  letter-spacing: 0.2em;
+  font-family: "Gilroy", sans-serif;
+}
+
+.block-description {
+  margin: 0 0 40px;
+  font-size: 15px;
+  line-height: 28px;
+  font-weight: 300;
+  font-family: "Open Sans", sans-serif;
+}
+
+.block-button {
+  margin-top: auto;
+}
+
+.ac {
+  padding: 86px 0;
+}
+.ac-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 0;
+  gap: 20px;
+}
+
+.about {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 440px;
+          flex: 1 0 440px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+.about-list {
+  padding: 0 0 0 33px;
+  margin: 20px 0 84px;
+  list-style: none;
+}
+.about-list__item {
+  position: relative;
+  font-size: 16px;
+  font-weight: 800;
+  font-family: "Gilroy", sans-serif;
+  line-height: 28px;
+}
+.about-list__item + .about-list__item {
+  margin-top: 20px;
+}
+.about-list__item:before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border: 2px solid #e5e5e5;
+  position: absolute;
+  top: 50%;
+  left: -33px;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  border-radius: 50%;
 }
