@@ -664,3 +664,78 @@ body
         width: 100%
         height: 222px
         margin-bottom: 85px
+
+.footer
+    background-color: $basic-dark
+    color: $basic-white
+    &-inner
+        padding: 44px 0 64px
+    &-top
+        display: flex
+        justify-content: space-between
+        &__logo
+            margin-top: 18px
+        &__list a
+            text-decoration: none
+            color: $basic-white
+            font-family: $fos
+            font-size: 15px
+            font-weight: 300
+            & + a
+                margin-left: 40px
+            svg
+                vertical-align: middle
+                margin-right: 11px
+    &-middle
+        margin: 40px 0 67px
+        display: flex
+        justify-content: space-between
+        align-items: center
+        address
+            font-size: 15px
+            font-family: $fos
+            font-weight: 300
+            line-height: 28px
+            font-style: normal
+        &__nav a
+            text-decoration: none
+            color: inherit
+            font-size: 18px
+            font-weight: 800
+            line-height: 22px
+            font-family: $fgl
+            letter-spacing: .2em
+            text-transform: uppercase
+            & + a
+                margin-left: 38px
+        &__phone
+            font-weight: 300
+            line-height: 20px
+            font-size: 15px
+            font-family: $fos
+            a
+                color: inherit
+                text-decoration: none
+    &-bottom
+        display: flex
+        justify-content: space-between
+        align-items: center
+        &__line
+            background-color: $special-yellow-dark
+        &__links a
+            display: inline-block
+            font-size: 0
+            opacity: .3
+            @include trans(opacity)
+            &:hover
+                opacity: 1
+            &:active
+                opacity: .1 
+            & + a
+                margin-left: 20px
+        &__logo
+            @include trans(opacity)
+            &:hover
+                opacity: .6
+            &:active
+                opacity: .3
