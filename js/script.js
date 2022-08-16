@@ -1,10 +1,17 @@
 // Обработка клика на кнопку каталога в шапке
 const headerCatalogBtn = document.querySelector('.js-header-catalog');
-headerCatalogBtn.addEventListener('click', (e) => e.target.classList.toggle('active'))
+headerCatalogBtn.addEventListener('click', (e) => e.target.classList.toggle('active'));
+
+// Кнопка-бургер в мобилке
+const headerBurgerBtn = document.querySelector('.js-header-burger');
+headerBurgerBtn.addEventListener('click', () => {
+    document.body.classList.toggle('overflow');
+    headerBurgerBtn.classList.toggle('active');
+});
 
 // слайдер
 const popularSlider = new Swiper('.popular-inner', {
-    allowTouchMove: false,
+    allowTouchMove: true,
     slideActiveClass: 'popular-item-active',
     effect: 'creative',
     watchOverflow: true,
@@ -14,6 +21,11 @@ const popularSlider = new Swiper('.popular-inner', {
     pagination: {
         el: '.popular-item__pagination',
         clickable: true
+    },
+    breakpoints: {
+        1024: {
+            allowTouchMove: false
+        }
     }
 })
 
@@ -22,7 +34,6 @@ const popularSlider = new Swiper('.popular-inner', {
 // кнопки и табы
 const servicesButtons = document.querySelectorAll('.services-buttons__item');
 const servicesTabs = document.querySelectorAll('.services-tab');
-console.log(servicesButtons)
 // переназначение класса active для кнопок
 function buttonToggle(id){
     // удаление активного класса
@@ -46,7 +57,6 @@ function tabToggle(id){
 // добавление функции на клик кнопкам
 for (let i = 0; i < servicesButtons.length; i++) {
     servicesButtons[i].onclick = function () {
-        console.log('clicked ' + i);
         buttonToggle(i);
         tabToggle(i);
     }
