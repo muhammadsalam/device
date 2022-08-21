@@ -838,6 +838,21 @@ body
             left: var(--container-horizontal-padding)
             right: var(--container-horizontal-padding)
 
+    .footer
+        &-inner
+            padding: 
+                right: var(--container-horizontal-padding)
+                left: var(--container-horizontal-padding)
+        &-middle
+            flex-wrap: wrap
+            justify-content: flex-start
+            &__nav
+                width: 100%
+                order: 1
+            &__phone
+                margin-left: 40px
+
+
 @media (max-width: 820px)
     .popular-item
         &__img img
@@ -894,6 +909,14 @@ body
                     font-size: 30px
                     line-height: 30px
 
+    .footer-top
+        align-items: center
+        flex-wrap: wrap
+        &__logo
+            margin-top: 0
+        &__list a + a
+            margin-left: 10px
+
 @media (max-width: 520px)
     .header-content
         padding: 40px var(--container-horizontal-padding)
@@ -936,3 +959,8 @@ body
                 position: static
         &-inner
             flex-direction: column
+
+    .about
+        flex: 1 1 auto
+    .contacts
+        flex: 1 1 auto
